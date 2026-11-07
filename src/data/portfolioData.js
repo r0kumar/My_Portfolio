@@ -63,31 +63,51 @@ export const portfolioData = {
   services: [
     {
       id: "fullstack-dev",
-      title: "Full-Stack Development",
-      description: "Custom web applications built with the MERN stack (MongoDB, Express.js, React.js, Node.js) and secure JWT authentication.",
-      icon: "Code2",
-      link: "#projects"
+      title: "Full-Stack Development (MERN)",
+      description: "Building full-stack apps with MongoDB, Express.js, React.js and Node.js, including JWT authentication and role-based access control. Built FixMate and Resume Analyzer.",
+      icon: "Code",
+      target: "#projects",
+      filter: "Full Stack"
     },
     {
       id: "frontend-dev",
       title: "Frontend Engineering",
-      description: "Responsive, mobile-first, interactive user interfaces with React.js, Tailwind CSS, and Context API.",
+      description: "Responsive user interfaces with React.js, Context API, HTML5 and CSS3, using reusable components.",
       icon: "Monitor",
-      link: "#projects"
+      target: "#projects",
+      filter: "Full Stack"
     },
     {
       id: "backend-apis",
       title: "Backend & RESTful APIs",
-      description: "RESTful API architectures using Node.js & Express with MongoDB, Postman testing, and role-based access control.",
+      description: "Designing REST APIs with Node.js, Express.js and MongoDB, secured with JWT and bcrypt, and tested with Postman.",
       icon: "Server",
-      link: "#projects"
+      target: "#projects",
+      filter: "Full Stack"
     },
     {
       id: "data-analytics",
       title: "Data Analytics & BI",
-      description: "Interactive Power BI dashboards, Exploratory Data Analysis (EDA), and complex SQL relational queries.",
+      description: "Power BI dashboard analyzing 22,000+ orders, Exploratory Data Analysis, and SQL analysis using JOINs, GROUP BY and subqueries.",
+      icon: "BarChart3",
+      target: "#projects",
+      filter: "Data Analytics"
+    },
+    {
+      id: "databases-sql",
+      title: "Databases & SQL",
+      description: "Working with MongoDB, MySQL and PostgreSQL, with a strong foundation in DBMS concepts and SQL.",
       icon: "Database",
-      link: "#projects"
+      target: "#projects",
+      filter: "Data Analytics"
+    },
+    {
+      id: "ai-eval",
+      title: "AI Evaluation & Prompt Engineering",
+      description: "Evaluating LLM outputs for quality, accuracy and consistency, designing test prompts, and integrating Google GenAI (AirDawgs Labs internship).",
+      icon: "Bot",
+      target: "#experience",
+      filter: null
     }
   ],
   skills: {
@@ -325,7 +345,7 @@ export const portfolioData = {
     { name: "HOME", href: "#home" },
     { name: "ABOUT", href: "#about" },
     { name: "EXPERIENCE", href: "#experience" },
-    { name: "SERVICES", href: "#services" },
+    { name: "EXPERTISE", href: "#services" },
     { name: "SKILLS", href: "#skills" },
     { name: "PROJECTS", href: "#projects" },
     { name: "WHY HIRE ME", href: "#why-hire-me" },

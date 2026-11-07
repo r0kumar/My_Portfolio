@@ -3,10 +3,23 @@ import { ArrowRight, ArrowUpRight, ExternalLink } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { ProjectModal } from './ProjectModal';
 
-export const Projects = () => {
+export const Projects = ({ activeFilter: propFilter, setActiveFilter: propSetFilter }) => {
   const { projects } = portfolioData;
   const [selectedProject, setSelectedProject] = useState(null);
-  const [activeFilter, setActiveFilter] = useState('All');
+  const [localFilter, setLocalFilter] = useState('All');
+
+  const activeFilter = propFilter !== undefined ? propFilter : localFilter;
+  const setActiveFilter = propSetFilter || setLocalFilter;
+
+  React.useEffect(() => {
+    const handleCustomFilter = (e) => {
+      if (e.detail) {
+        setActiveFilter(e.detail);
+      }
+    };
+    window.addEventListener('set-project-filter', handleCustomFilter);
+    return () => window.removeEventListener('set-project-filter', handleCustomFilter);
+  }, [setActiveFilter]);
 
   const categories = ['All', ...new Set(projects.map((p) => p.category))];
 

@@ -12,6 +12,7 @@ import { Footer } from './components/Footer';
 
 function App() {
   const [activeRole, setActiveRole] = React.useState('fullstack');
+  const [activeProjectFilter, setActiveProjectFilter] = React.useState('All');
 
   return (
     <div className="min-h-screen bg-[#080C15] text-slate-200 selection:bg-amber-500 selection:text-black relative overflow-x-hidden">
@@ -27,9 +28,9 @@ function App() {
         <main>
           <Hero activeRole={activeRole} />
           <About activeRole={activeRole} setActiveRole={setActiveRole} />
-          <Services />
+          <Services activeRole={activeRole} onSelectFilter={setActiveProjectFilter} />
           <Skills />
-          <Projects />
+          <Projects activeFilter={activeProjectFilter} setActiveFilter={setActiveProjectFilter} />
           <Experience />
           <WhyHireMe />
           <Contact activeRole={activeRole} />
