@@ -88,7 +88,7 @@
     }
   ],
   "education": [
-    {"institution": "JSS Academy of Technical Education, Noida, India", "degree": "Bachelor of Technology – Information Technology", "period": "2023 – 2027", "score": "CGPA: 7.36/10"},
+    {"institution": "JSS Academy of Technical Education, Noida, India", "degree": "Bachelor of Technology – Information Technology", "period": "2023 – 2027"},
     {"institution": "Central Hindu Boys School, Varanasi", "degree": "Intermediate (Class XII), PCM", "period": "2021 – 2023"},
     {"institution": "Florence Public School, New Delhi", "degree": "High School (Class X)", "period": "2019 – 2021"}
   ],

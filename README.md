@@ -25,7 +25,7 @@ Features a sleek obsidian/dark aesthetic inspired by the modern DEVFUSION design
    - **Interactive Role Switcher Toggle**:
      - `Full Stack (MERN) View`: Highlights MERN development, APIs, auth, and scalable web apps.
      - `Data Analyst View`: Highlights SQL, Python, Excel, Power BI, and business intelligence reporting.
-   - 4 Stat Highlights: `4+ Completed Projects`, `22K+ Orders Analyzed`, `4 Certifications`, `7.36 B.Tech CGPA`.
+   - 4 Stat Highlights: `4+ Completed Projects`, `22K+ Orders Analyzed`, `4 Certifications`, `2027 Graduation Year`.
    - Smart `DOWNLOAD RESUME` button serving the matching PDF (`Rohit_Kumar_MERN_Resume.pdf` or `Rohit_Kumar_Data_Analyst_Resume.pdf`).
    - Quick Info Card with profile avatar thumbnail, email, and Noida, India location.
    - Dotted world map with beacon on India.

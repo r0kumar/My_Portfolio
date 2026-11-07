@@ -57,7 +57,7 @@ export const portfolioData = {
       { value: "4+", label: "Completed Projects" },
       { value: "22K+", label: "Orders Analyzed" },
       { value: "4", label: "Certifications" },
-      { value: "7.36", label: "B.Tech CGPA (JSS Noida)" }
+      { value: "2027", label: "Graduation Year" }
     ]
   },
   services: [
@@ -176,7 +176,6 @@ export const portfolioData = {
       institution: "JSS Academy of Technical Education, Noida, India",
       degree: "Bachelor of Technology – Information Technology",
       period: "2023 – 2027",
-      score: "CGPA: 7.36/10",
       details: "Focusing on Software Engineering, Data Analytics, DBMS, and Web Technologies."
     },
     {
