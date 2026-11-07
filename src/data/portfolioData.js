@@ -162,7 +162,7 @@ export const portfolioData = {
       degree: "Bachelor of Technology – Information Technology",
       period: "2023 – 2027",
       score: "CGPA: 7.36/10",
-      details: "Focusing on Software Engineering, Data Structures, DBMS, and Web Technologies."
+      details: "Focusing on Software Engineering, Data Analytics, DBMS, and Web Technologies."
     },
     {
       institution: "Central Hindu Boys School, Varanasi",
