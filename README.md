@@ -12,7 +12,7 @@ Features a sleek obsidian aesthetic with amber/gold accents, floating tech badge
 - **Styling**: [Tailwind CSS 3](https://tailwindcss.com/) with PostCSS & Autoprefixer
 - **Icons**: [Lucide React](https://lucide.dev/) + Custom SVG Tech Badges
 - **Typography**: Google Fonts (*Plus Jakarta Sans*, *Great Vibes*, *Dancing Script*)
-- **Deployment**: [Netlify](https://www.netlify.com/) (Zero-config SPA with redirect rules)
+- **Deployment**: [Vercel](https://vercel.com/) (Zero-config SPA with rewrite rules)
 
 ---
 
@@ -88,23 +88,24 @@ npm run preview
 
 ---
 
-## 🌐 Netlify Deployment
+## 🌐 Vercel Deployment
 
-The project includes a pre-configured `netlify.toml` file with SPA routing rules.
+The project includes a pre-configured `vercel.json` file with SPA rewrite rules for smooth client-side routing.
 
 ### Deploy Settings:
+- **Framework Preset**: Vite
 - **Build command**: `npm run build`
-- **Publish directory**: `dist`
+- **Output directory**: `dist`
 
 ### Steps to deploy:
 1. Push your repository to GitHub:
    ```bash
    git push origin main
    ```
-2. Log into [Netlify](https://app.netlify.com/) and click **"Add new site"** > **"Import an existing project"**.
-3. Select your GitHub repository (`Rohit_Portfolio`).
-4. Netlify will auto-detect the build command (`npm run build`) and publish directory (`dist`).
-5. Click **"Deploy site"**. Your portfolio is live!
+2. Log into [Vercel](https://vercel.com/) and click **"Add New..."** > **"Project"**.
+3. Import your GitHub repository (`My_Portfolio`).
+4. Vercel automatically detects **Vite** as the framework preset, `npm run build` as the build command, and `dist` as the output directory.
+5. Click **"Deploy"**. Your portfolio will be live in seconds!
 
 ---
 
