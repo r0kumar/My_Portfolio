@@ -1,5 +1,7 @@
 # Rohit Kumar — Personal Portfolio Website
 
+🔗 **Live Website**: [https://rohitkumar123.vercel.app/](https://rohitkumar123.vercel.app/)
+
 A modern, high-performance, fully responsive personal developer portfolio website designed for **Rohit Kumar** (B.Tech IT student, graduating 2027) targeting **Full-Stack (MERN) Developer** and **Data Analyst** roles.
 
 Features a sleek obsidian aesthetic with amber/gold accents, floating tech badges, glassmorphic cards, and an interactive dual-role switcher that dynamically alters summaries, service priorities, and resume downloads.
@@ -13,6 +15,7 @@ Features a sleek obsidian aesthetic with amber/gold accents, floating tech badge
 - **Icons**: [Lucide React](https://lucide.dev/) + Custom SVG Tech Badges
 - **Typography**: Google Fonts (*Plus Jakarta Sans*, *Great Vibes*, *Dancing Script*)
 - **Deployment**: [Vercel](https://vercel.com/) (Zero-config SPA with rewrite rules)
+- **Live URL**: [https://rohitkumar123.vercel.app/](https://rohitkumar123.vercel.app/)
 
 ---
 
@@ -89,6 +92,8 @@ npm run preview
 ---
 
 ## 🌐 Vercel Deployment
+
+🔗 **Live Production URL**: [https://rohitkumar123.vercel.app/](https://rohitkumar123.vercel.app/)
 
 The project includes a pre-configured `vercel.json` file with SPA rewrite rules for smooth client-side routing.
 
