@@ -9,7 +9,7 @@ export const Contact = () => {
     name: '',
     email: '',
     projectType: 'Frontend Development',
-    budget: '$5,000 - $10,000',
+    budget: '₹5,000 - ₹10,000',
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
@@ -37,7 +37,7 @@ export const Contact = () => {
         name: '',
         email: '',
         projectType: 'Frontend Development',
-        budget: '$5,000 - $10,000',
+        budget: '₹5,000 - ₹10,000',
         message: ''
       });
     }, 4000);
@@ -116,10 +116,10 @@ export const Contact = () => {
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                     className="w-full px-5 py-3.5 rounded-xl bg-[#121A29]/90 border border-white/10 text-slate-200 text-sm focus:outline-none focus:border-amber-500/60 focus:ring-1 focus:ring-amber-500/40 transition-all cursor-pointer"
                   >
-                    <option value="<$3,000" className="bg-[#121A29]">Budget: Under $3,000</option>
-                    <option value="$3,000 - $5,000" className="bg-[#121A29]">Budget: $3,000 - $5,000</option>
-                    <option value="$5,000 - $10,000" className="bg-[#121A29]">Budget: $5,000 - $10,000</option>
-                    <option value="$10,000+" className="bg-[#121A29]">Budget: $10,000+</option>
+                    <option value="₹5,000 - ₹10,000" className="bg-[#121A29]">Budget: ₹5,000 – ₹10,000</option>
+                    <option value="₹10,000 - ₹20,000" className="bg-[#121A29]">Budget: ₹10,000 – ₹20,000</option>
+                    <option value="₹20,000 - ₹30,000" className="bg-[#121A29]">Budget: ₹20,000 – ₹30,000</option>
+                    <option value="₹30,000+" className="bg-[#121A29]">Budget: ₹30,000+</option>
                   </select>
                 </div>
               </div>
