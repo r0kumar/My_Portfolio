@@ -98,10 +98,7 @@ export const portfolioData = {
       { name: "Power BI", icon: "powerbi", color: "#F2C811" },
       { name: "Excel", icon: "excel", color: "#1D6F42" },
       { name: "Git", icon: "git", color: "#F05032" },
-      { name: "Postman", icon: "postman", color: "#FF6C37" },
-      { name: "Netlify", icon: "netlify", color: "#00C7B7" },
-      { name: "Render", icon: "render", color: "#46E3B7" },
-      { name: "Docker", icon: "docker", color: "#2496ED" }
+      { name: "Postman", icon: "postman", color: "#FF6C37" }
     ],
     skillCategories: {
       "Languages": ["JavaScript", "Python", "SQL"],
@@ -110,7 +107,7 @@ export const portfolioData = {
       "Databases": ["MongoDB", "MySQL", "PostgreSQL"],
       "Data Analysis & Visualization": ["Power BI", "Microsoft Excel", "Pandas", "NumPy", "Matplotlib", "Exploratory Data Analysis (EDA)"],
       "Core Competencies (Data)": ["Data Cleaning", "Dashboard Development", "KPI Tracking", "Trend Analysis", "Business Intelligence Reporting"],
-      "Tools & Platforms": ["Git", "GitHub", "Postman", "Netlify", "Render"],
+      "Tools & Platforms": ["Git", "GitHub", "Postman"],
       "Core CS": ["Object-Oriented Programming (OOP)", "DBMS", "Problem Solving"],
       "AI & Dev Tools": ["Cursor", "Google AI Studio", "AI-Assisted Coding", "LLM API Integration", "Prompt Engineering"],
       "Soft Skills": ["Communication", "Teamwork", "Problem Solving", "Adaptability", "Time Management", "Collaboration"]

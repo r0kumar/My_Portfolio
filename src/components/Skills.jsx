@@ -64,9 +64,9 @@ export const Skills = () => {
 
           </div>
 
-          {/* Right Column: 15 Tech Stack Cards Grid (5 x 3) */}
+          {/* Right Column: 12 Tech Stack Cards Grid (4 x 3) */}
           <div className="lg:col-span-7">
-            <div className="grid grid-cols-3 sm:grid-cols-5 gap-3.5 sm:gap-4">
+            <div className="grid grid-cols-3 sm:grid-cols-4 gap-3.5 sm:gap-4">
               {skills.techStack.map((tech, idx) => (
                 <div
                   key={idx}
