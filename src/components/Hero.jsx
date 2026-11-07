@@ -193,19 +193,19 @@ export const Hero = () => {
                 </div>
               </div>
 
-              {/* 3. Floating Badge: TypeScript (Bottom Left) */}
+              {/* 3. Floating Badge: SQL (Bottom Left) */}
               <div className="absolute bottom-4 -left-1 sm:bottom-10 sm:left-0 animate-float-slow z-20 animation-delay-4000">
-                <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1 sm:px-3.5 sm:py-2 rounded-xl bg-[#121A29]/95 border border-white/10 shadow-xl shadow-black/60 backdrop-blur-md hover:border-blue-400/50 transition-all hover:scale-105">
-                  <TechIcon name="typescript" className="w-4 h-4 sm:w-5 sm:h-5" />
-                  <span className="text-[11px] sm:text-sm font-semibold text-slate-200">TypeScript</span>
+                <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1 sm:px-3.5 sm:py-2 rounded-xl bg-[#121A29]/95 border border-white/10 shadow-xl shadow-black/60 backdrop-blur-md hover:border-cyan-400/50 transition-all hover:scale-105">
+                  <TechIcon name="sql" className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <span className="text-[11px] sm:text-sm font-semibold text-slate-200">SQL</span>
                 </div>
               </div>
 
-              {/* 4. Floating Badge: MongoDB (Bottom Right) */}
+              {/* 4. Floating Badge: Python (Bottom Right) */}
               <div className="absolute bottom-2 right-0 sm:bottom-8 sm:-right-4 animate-float-medium z-20">
-                <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1 sm:px-3.5 sm:py-2 rounded-xl bg-[#121A29]/95 border border-white/10 shadow-xl shadow-black/60 backdrop-blur-md hover:border-green-400/50 transition-all hover:scale-105">
-                  <TechIcon name="mongodb" className="w-4 h-4 sm:w-5 sm:h-5" />
-                  <span className="text-[11px] sm:text-sm font-semibold text-slate-200">MongoDB</span>
+                <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1 sm:px-3.5 sm:py-2 rounded-xl bg-[#121A29]/95 border border-white/10 shadow-xl shadow-black/60 backdrop-blur-md hover:border-amber-400/50 transition-all hover:scale-105">
+                  <TechIcon name="python" className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <span className="text-[11px] sm:text-sm font-semibold text-slate-200">Python</span>
                 </div>
               </div>
 
