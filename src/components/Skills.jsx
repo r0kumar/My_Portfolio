@@ -1,7 +1,7 @@
 import React from 'react';
 import { portfolioData } from '../data/portfolioData';
 import { TechIcon } from './TechIcons';
-import { Layers, Sparkles, Bot, Code2, Cpu, Zap, ArrowUpRight } from 'lucide-react';
+import { Layers, Sparkles, Bot, Code2, Cpu, Zap } from 'lucide-react';
 
 const aiIconMap = {
   Bot: Bot,

@@ -178,7 +178,6 @@ export const Hero = ({ activeRole = 'fullstack' }) => {
                   className="w-full h-full object-cover object-center filter brightness-[1.02] contrast-[1.05]"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = "/profile_cropped.jpg";
                   }}
                 />
                 {/* Vignette overlay */}

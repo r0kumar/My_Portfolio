@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, CheckCircle2, Award, Briefcase, GraduationCap } from 'lucide-react';
+import { Mail, MapPin, CheckCircle2 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { ResumeDropdown } from './ResumeDropdown';
 

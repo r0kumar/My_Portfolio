@@ -1,103 +1,121 @@
 # Rohit Kumar — Personal Portfolio Website
 
-A modern, high-performance, fully responsive personal portfolio website built with **React.js** and **Tailwind CSS**, designed specifically for **Rohit Kumar** (B.Tech IT, graduating 2027) targeting **Full-Stack (MERN) Developer** and **Data Analyst** roles.
+A modern, high-performance, fully responsive personal developer portfolio website designed for **Rohit Kumar** (B.Tech IT student, graduating 2027) targeting **Full-Stack (MERN) Developer** and **Data Analyst** roles.
 
-Features a sleek obsidian/dark aesthetic inspired by the modern DEVFUSION design system, complete with amber/gold glows, floating tech badges, glassmorphic cards, and an interactive Role Switcher.
-
----
-
-## 🌟 Key Sections & Features
-
-1. **Header & Navigation (`Navbar.jsx`)**:
-   - `ROHIT.DEV` logo with geometric glowing hexagon icon.
-   - Smooth-scrolling anchor links (`HOME`, `ABOUT`, `SERVICES`, `SKILLS`, `PROJECTS`, `EXPERIENCE`, `EDUCATION`, `CONTACT`).
-   - Pill-shaped `LET'S TALK` CTA button.
-   - Responsive mobile navigation drawer with backdrop blur.
-
-2. **Hero Section (`Hero.jsx`)**:
-   - Live typewriter role switcher (`Full-Stack (MERN) Developer`, `Data Analyst`, `AI-Assisted Builder`, `B.Tech IT Student (2027)`).
-   - Direct CTAs: `HIRE ME →` and `VIEW MY WORK`.
-   - Radar-pulsing status badge: `OPEN TO ROLES & INTERNSHIPS`.
-   - Direct contact bar: GitHub (`r0kumar`), LinkedIn (`rohit-kumar-665082299`), Phone, and Email.
-   - Centered circular developer portrait of Rohit surrounded by concentric glowing orbit rings and 4 floating tech badges (`React.js`, `Node.js`, `TypeScript`, `MongoDB`).
-
-3. **About Me (`About.jsx`)**:
-   - **Interactive Role Switcher Toggle**:
-     - `Full Stack (MERN) View`: Highlights MERN development, APIs, auth, and scalable web apps.
-     - `Data Analyst View`: Highlights SQL, Python, Excel, Power BI, and business intelligence reporting.
-   - 4 Stat Highlights: `4+ Completed Projects`, `22K+ Orders Analyzed`, `4 Certifications`, `2027 Graduation Year`.
-   - Smart `DOWNLOAD RESUME` button serving the matching PDF (`Rohit_Kumar_MERN_Resume.pdf` or `Rohit_Kumar_Data_Analyst_Resume.pdf`).
-   - Quick Info Card with profile avatar thumbnail, email, and Noida, India location.
-   - Dotted world map with beacon on India.
-   - Golden calligraphy signature: `Rohit Kumar`.
-
-4. **Services ("WHAT I DO")**:
-   - Full-Stack Development (MERN Stack & JWT Auth)
-   - Frontend Engineering (React.js, Tailwind CSS, Context API)
-   - Backend & RESTful APIs (Node.js, Express.js, Postman)
-   - Data Analytics & Business Intelligence (Power BI, EDA, SQL)
-
-5. **Skills & Core Competencies (`Skills.jsx`)**:
-   - 6 Glowing animated skill progress bars.
-   - 15 Tech stack square cards (5×3 grid) with authentic SVG icons.
-   - Categorized Core Competencies section (Languages, Frontend, Backend, Databases, Data Analysis, Tools, Core CS, AI & Dev Tools, Soft Skills).
-
-6. **Featured Projects (`Projects.jsx` & `ProjectModal.jsx`)**:
-   - Filterable categories (`All`, `Full Stack`, `Full Stack + AI`, `Data Analytics`).
-   - **FixMate – PG & Hostel Maintenance Tracker** (Live Demo: [https://fix-mate-pg-hostel-maintenance-trac.vercel.app/](https://fix-mate-pg-hostel-maintenance-trac.vercel.app/))
-   - **Resume Analyzer & Report Generator** (Live Demo: [https://resume-analyzer-and-report-generator.netlify.app/register](https://resume-analyzer-and-report-generator.netlify.app/register))
-   - **Sales Performance Dashboard** (Power BI, 22K+ orders analyzed)
-   - **Music Store Database Analysis** (SQL, relational DBMS)
-   - Interactive project details modal with all bullet points and direct repository/demo links.
-
-7. **Career Background (`Experience.jsx`)**:
-   - **Internship**: AI Systems Evaluation Intern at AirDawgs Labs (Online, Jul 2026 – Aug 2026).
-   - **Education**: JSS Academy of Technical Education (B.Tech IT), Central Hindu Boys School (Class XII, PCM), Florence Public School (Class X).
-   - **Certifications**: Oracle Cloud OCI AI Foundations, Python for Everybody, Introduction to Front End, Data Analyst 101.
-   - **Honors & Achievements**: Smart India Hackathon (SIH 2025) Round 2 Shortlisted, 1st Rank in School in Class X.
-
-8. **Contact Section (`Contact.jsx`)**:
-   - Interactive 2-column contact form with dropdowns and submission confirmation.
-   - 1-Click Copy to Clipboard for Email and Phone with toast notification.
-   - Direct email and phone links.
+Features a sleek obsidian aesthetic with amber/gold accents, floating tech badges, glassmorphic cards, and an interactive dual-role switcher that dynamically alters summaries, service priorities, and resume downloads.
 
 ---
 
-## 🚀 How to Run the Website Locally
+## 🛠️ Tech Stack
+
+- **Framework**: [React 18](https://react.dev/) (Vite 5)
+- **Styling**: [Tailwind CSS 3](https://tailwindcss.com/) with PostCSS & Autoprefixer
+- **Icons**: [Lucide React](https://lucide.dev/) + Custom SVG Tech Badges
+- **Typography**: Google Fonts (*Plus Jakarta Sans*, *Great Vibes*, *Dancing Script*)
+- **Deployment**: [Netlify](https://www.netlify.com/) (Zero-config SPA with redirect rules)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+Make sure you have **Node.js** (v18 or higher recommended) and **npm** installed on your system.
+
+### 1. Install Dependencies
+```bash
+npm install
+```
+
+### 2. Run Local Development Server
+```bash
+npm run dev
+```
+Open `http://localhost:3000` (or the URL shown in your terminal) to view the portfolio in your browser. Hot Module Replacement (HMR) is active by default.
+
+---
+
+## ✏️ How to Edit Content
+
+All portfolio content, personal details, project cards, experience entries, certifications, skills, and links are centralized in a single configuration file:
+
+📁 **[`src/data/portfolio.js`](src/data/portfolio.js)** (aliases [`src/data/portfolioData.js`](src/data/portfolioData.js))
+
+### What you can update:
+1. **Personal Information**:
+   - `personal.firstName`, `personal.lastName`, `personal.location`, `personal.email`, `personal.phone`
+   - `personal.github`, `personal.linkedin`
+   - `personal.roles` (the rotating typewriter role list in the Hero section)
+2. **Dual-Role Summaries**:
+   - `summaries.fullstack`: Displayed when the "Full Stack (MERN)" role toggle is selected.
+   - `summaries.dataAnalyst`: Displayed when the "Data Analyst" role toggle is selected.
+3. **Featured Projects**:
+   - Edit, add, or reorder projects under `projects`.
+   - Each project supports: `id`, `title`, `category`, `description`, `highlights`, `tags`, `demoUrl`, `githubUrl`, and `image` (stored in `/public/projects/`).
+4. **Skills & Tech Grid**:
+   - Update `skills.competencies` for categorized badges and `skills.grid` for the 12 tech stack cards.
+5. **Experience & Education**:
+   - Update `experience`, `education`, `certifications`, and `achievements` lists.
+6. **Resumes**:
+   - Update file paths and labels in `resumes.fullstack` and `resumes.dataAnalyst`.
+
+---
+
+## 📄 Managing Resume PDFs
+
+The portfolio provides an interactive dual-option resume download button that automatically serves the resume matching the active role view:
+
+- **Full-Stack Resume**: `/public/resumes/Rohit_Kumar_MERN_Resume.pdf`
+- **Data Analyst Resume**: `/public/resumes/Rohit_Kumar_Data_Analyst_Resume.pdf`
+
+To update your resumes, replace those two PDF files inside `/public/resumes/` while keeping their exact file names.
+
+---
+
+## 📦 Production Build
+
+To create an optimized production bundle:
 
 ```bash
-# 1. Install dependencies (if not already installed)
-npm install
+npm run build
+```
 
-# 2. Run local development server
-npm run dev
+This compiles your application and places all minified assets into the `dist/` directory.
 
-# 3. Open in your browser
-http://localhost:3000
+To preview the production build locally before deploying:
+```bash
+npm run preview
 ```
 
 ---
 
-## 📄 Adding Your Resume PDFs
+## 🌐 Netlify Deployment
 
-To enable the Download Resume button to serve your actual resume files:
-1. Place your Full-Stack resume at:
-   `/public/resumes/Rohit_Kumar_MERN_Resume.pdf`
-2. Place your Data Analyst resume at:
-   `/public/resumes/Rohit_Kumar_Data_Analyst_Resume.pdf`
+The project includes a pre-configured `netlify.toml` file with SPA routing rules.
 
-The download button dynamically selects the correct PDF based on whichever role view is active.
+### Deploy Settings:
+- **Build command**: `npm run build`
+- **Publish directory**: `dist`
+
+### Steps to deploy:
+1. Push your repository to GitHub:
+   ```bash
+   git push origin main
+   ```
+2. Log into [Netlify](https://app.netlify.com/) and click **"Add new site"** > **"Import an existing project"**.
+3. Select your GitHub repository (`Rohit_Portfolio`).
+4. Netlify will auto-detect the build command (`npm run build`) and publish directory (`dist`).
+5. Click **"Deploy site"**. Your portfolio is live!
 
 ---
 
-## 🌐 Deploying to Netlify
+## 🌟 Key Sections & Architecture
 
-The repository includes `netlify.toml` pre-configured for instant zero-config deployment:
-
-1. Push your repository to GitHub (`git push origin main`).
-2. Log into [Netlify](https://app.netlify.com/) and click **"Add new site"** > **"Import an existing project"**.
-3. Select your GitHub repository `Rohit_Portfolio`.
-4. Netlify will automatically detect:
-   - **Build Command**: `npm run build`
-   - **Publish Directory**: `dist`
-5. Click **"Deploy site"**. Your portfolio will be live in under 60 seconds!
+1. **Header & Navigation (`Navbar.jsx`)**: Sticky navigation with glowing brand mark, smooth scrolling to sections, mobile drawer, and direct CTA.
+2. **Hero (`Hero.jsx`)**: Animated typewriter role rotator, status pill badge (`OPEN TO ROLES & INTERNSHIPS`), direct contact triggers, and developer portrait with orbit badges.
+3. **About Me (`About.jsx`)**: Interactive dual-role switcher (Full-Stack vs Data Analyst), 4 key metric counters, info card, and handwritten calligraphy signature.
+4. **Areas of Expertise (`Services.jsx`)**: Factual 5-card layout highlighting Full-Stack development, Frontend, Backend & APIs, Data Analytics & BI, and Databases & SQL, reordered dynamically based on active role.
+5. **Skills & Core Competencies (`Skills.jsx`)**: 6 skill progress bars, 12 tech stack cards, dedicated AI tooling grid, and categorized competency pills.
+6. **Projects (`Projects.jsx` & `ProjectModal.jsx`)**: Category-filtered project gallery with interactive detailed modal view, live demo, and GitHub links.
+7. **Experience & Education (`Experience.jsx`)**: Two-column layout featuring internship history, academic education timeline, certifications with verify links, and hackathon honors.
+8. **Why Hire Me (`WhyHireMe.jsx`)**: 3 value-proposition pillars emphasizing full-stack development, analytical rigor, and fast learning.
+9. **Contact & Footer (`Contact.jsx` & `Footer.jsx`)**: Recruiter opportunity inquiry form, 1-click clipboard copy for email and phone, quick navigation links, and copyright info.
