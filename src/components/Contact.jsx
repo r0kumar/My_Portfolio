@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, ArrowRight, CheckCircle2, Copy, Check } from 'lucide-react';
+import { Mail, Phone, MapPin, Briefcase, ArrowRight, CheckCircle2, Copy, Check, ExternalLink, Download, Github, Linkedin, AlertCircle } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
-export const Contact = () => {
+export const Contact = ({ activeRole = 'fullstack' }) => {
   const { personal } = portfolioData;
   const [copiedField, setCopiedField] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    projectType: 'Frontend Development',
-    budget: '₹5,000 - ₹10,000',
+    role: 'Full Stack / MERN Developer',
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
   const copyToClipboard = (text, field) => {
     navigator.clipboard.writeText(text);
@@ -20,14 +20,54 @@ export const Contact = () => {
     setTimeout(() => setCopiedField(null), 2500);
   };
 
+  const handleDownloadResume = async (e) => {
+    e.preventDefault();
+    const fileName = activeRole === 'fullstack'
+      ? 'Rohit_Kumar_MERN_Resume.pdf'
+      : 'Rohit_Kumar_Data_Analyst_Resume.pdf';
+    const filePath = `/resumes/${fileName}`;
+
+    try {
+      const response = await fetch(filePath, { method: 'HEAD' });
+      if (response.ok) {
+        const link = document.createElement('a');
+        link.href = filePath;
+        link.download = fileName;
+        link.target = '_blank';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } else {
+        alert(`Resume file "${fileName}" not found in /public/resumes/. Place your PDF in the "public/resumes/" folder to enable one-click downloading!`);
+      }
+    } catch {
+      alert(`Place your PDF ("${fileName}") in the "public/resumes/" folder to enable one-click downloading!`);
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    setErrorMsg('');
+
+    // Validation
+    if (!formData.name.trim()) {
+      setErrorMsg('Please enter your full name.');
+      return;
+    }
+    if (!formData.email.trim() || !/^\S+@\S+\.\S+$/.test(formData.email)) {
+      setErrorMsg('Please enter a valid email address.');
+      return;
+    }
+    if (!formData.message.trim()) {
+      setErrorMsg('Please provide a message or opportunity details.');
+      return;
+    }
+
     setSubmitted(true);
-    
-    // Open prefilled email in default client
-    const subject = encodeURIComponent(`Project Inquiry: ${formData.projectType} from ${formData.name}`);
+
+    const subject = encodeURIComponent(`Opportunity for Rohit Kumar - ${formData.role}`);
     const body = encodeURIComponent(
-      `Hi Rohit,\n\nI came across your portfolio and would like to connect!\n\nName: ${formData.name}\nEmail: ${formData.email}\nProject Type: ${formData.projectType}\nBudget Range: ${formData.budget}\n\nProject Details:\n${formData.message}\n\nLooking forward to hearing from you!`
+      `Hi Rohit,\n\nI came across your portfolio and would like to connect regarding an opportunity!\n\nCandidate Role: ${formData.role}\nFrom: ${formData.name} (${formData.email})\n\nOpportunity Details:\n${formData.message}\n\nLooking forward to speaking with you!`
     );
     window.location.href = `mailto:${personal.email}?subject=${subject}&body=${body}`;
 
@@ -36,11 +76,10 @@ export const Contact = () => {
       setFormData({
         name: '',
         email: '',
-        projectType: 'Frontend Development',
-        budget: '₹5,000 - ₹10,000',
+        role: 'Full Stack / MERN Developer',
         message: ''
       });
-    }, 4000);
+    }, 4500);
   };
 
   return (
@@ -59,27 +98,27 @@ export const Contact = () => {
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
-            Let's Build Something Amazing Together
+            Let's Connect
           </h2>
           <p className="text-slate-400 text-base sm:text-lg max-w-2xl leading-relaxed">
-            Have a project in mind? Let's discuss how we can bring your ideas to life. I'm always excited to work on new challenges and innovative projects.
+            I'm a final-year B.Tech IT student open to entry-level MERN Stack / Full Stack Developer and Data Analyst roles. If you have an opportunity or want to talk, I'd love to hear from you.
           </p>
         </div>
 
         {/* 2-Column Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           
-          {/* Left Column: Form */}
+          {/* Left Column: Recruiter Contact Form */}
           <div className="lg:col-span-7">
             <form onSubmit={handleSubmit} className="space-y-5">
               
-              {/* Row 1: Name & Email */}
+              {/* Row 1: Full Name & Email */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <input
                     type="text"
                     required
-                    placeholder="First Name"
+                    placeholder="Full Name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-5 py-3.5 rounded-xl bg-[#121A29]/90 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-500/60 focus:ring-1 focus:ring-amber-500/40 transition-all"
@@ -97,31 +136,18 @@ export const Contact = () => {
                 </div>
               </div>
 
-              {/* Row 2: Project Type & Budget Range */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <select
-                    value={formData.projectType}
-                    onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                    className="w-full px-5 py-3.5 rounded-xl bg-[#121A29]/90 border border-white/10 text-slate-200 text-sm focus:outline-none focus:border-amber-500/60 focus:ring-1 focus:ring-amber-500/40 transition-all cursor-pointer"
-                  >
-                    <option value="Frontend Development" className="bg-[#121A29]">Project: Frontend Development</option>
-                    <option value="Full Stack Development" className="bg-[#121A29]">Project: Full Stack Development</option>
-                    <option value="Data Analytics" className="bg-[#121A29]">Project: Data Analytics</option>
-                  </select>
-                </div>
-                <div>
-                  <select
-                    value={formData.budget}
-                    onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                    className="w-full px-5 py-3.5 rounded-xl bg-[#121A29]/90 border border-white/10 text-slate-200 text-sm focus:outline-none focus:border-amber-500/60 focus:ring-1 focus:ring-amber-500/40 transition-all cursor-pointer"
-                  >
-                    <option value="₹5,000 - ₹10,000" className="bg-[#121A29]">Budget: ₹5,000 – ₹10,000</option>
-                    <option value="₹10,000 - ₹20,000" className="bg-[#121A29]">Budget: ₹10,000 – ₹20,000</option>
-                    <option value="₹20,000 - ₹30,000" className="bg-[#121A29]">Budget: ₹20,000 – ₹30,000</option>
-                    <option value="₹30,000+" className="bg-[#121A29]">Budget: ₹30,000+</option>
-                  </select>
-                </div>
+              {/* Row 2: Role you're hiring for */}
+              <div>
+                <select
+                  value={formData.role}
+                  onChange={(e) => setFormData({ ...formData, role: e.target.value })}
+                  className="w-full px-5 py-3.5 rounded-xl bg-[#121A29]/90 border border-white/10 text-slate-200 text-sm focus:outline-none focus:border-amber-500/60 focus:ring-1 focus:ring-amber-500/40 transition-all cursor-pointer"
+                >
+                  <option value="Full Stack / MERN Developer" className="bg-[#121A29]">Role: Full Stack / MERN Developer</option>
+                  <option value="Data Analyst" className="bg-[#121A29]">Role: Data Analyst</option>
+                  <option value="Internship" className="bg-[#121A29]">Role: Internship</option>
+                  <option value="Other" className="bg-[#121A29]">Role: Other</option>
+                </select>
               </div>
 
               {/* Row 3: Message Textarea */}
@@ -129,12 +155,20 @@ export const Contact = () => {
                 <textarea
                   rows={5}
                   required
-                  placeholder="Tell me about your project..."
+                  placeholder="Tell me about the opportunity..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full px-5 py-3.5 rounded-xl bg-[#121A29]/90 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-amber-500/60 focus:ring-1 focus:ring-amber-500/40 transition-all resize-none"
                 />
               </div>
+
+              {/* Error Message if any */}
+              {errorMsg && (
+                <div className="flex items-center gap-2 p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-xs text-red-400">
+                  <AlertCircle className="w-4 h-4 shrink-0" />
+                  <span>{errorMsg}</span>
+                </div>
+              )}
 
               {/* Submit CTA Button */}
               <div>
@@ -146,7 +180,7 @@ export const Contact = () => {
                   {submitted ? (
                     <>
                       <CheckCircle2 className="w-4 h-4 text-black" />
-                      <span>MESSAGE SENT SUCCESSFULLY!</span>
+                      <span>OPENING EMAIL CLIENT...</span>
                     </>
                   ) : (
                     <>
@@ -157,19 +191,26 @@ export const Contact = () => {
                 </button>
               </div>
 
+              {submitted && (
+                <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 p-3 rounded-xl">
+                  <CheckCircle2 className="w-4 h-4 shrink-0" />
+                  <span>Thank you! Your mail client has been opened with the opportunity details prefilled.</span>
+                </div>
+              )}
+
             </form>
           </div>
 
-          {/* Right Column: Contact Info Card */}
-          <div className="lg:col-span-5">
-            <div className="rounded-2xl bg-[#121A29]/90 border border-white/[0.08] p-6 sm:p-7 shadow-xl shadow-black/40 space-y-6">
+          {/* Right Column: Contact Info Card & Download Resume */}
+          <div className="lg:col-span-5 space-y-4">
+            <div className="rounded-2xl bg-[#121A29]/90 border border-white/[0.08] p-6 sm:p-7 shadow-xl shadow-black/40 space-y-5">
               
               {/* Header */}
               <h3 className="text-lg font-bold text-white border-b border-white/5 pb-4">
                 Contact Information
               </h3>
 
-              <div className="space-y-4">
+              <div className="space-y-3.5">
                 {/* Email */}
                 <div className="flex items-center justify-between gap-3.5 pb-3 border-b border-white/5">
                   <div className="flex items-start gap-3.5">
@@ -227,7 +268,7 @@ export const Contact = () => {
                 </div>
 
                 {/* Location */}
-                <div className="flex items-start gap-3.5">
+                <div className="flex items-start gap-3.5 pb-3 border-b border-white/5">
                   <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0 mt-0.5">
                     <MapPin className="w-4 h-4" />
                   </div>
@@ -239,21 +280,76 @@ export const Contact = () => {
                   </div>
                 </div>
 
-                {/* Response Time */}
-                <div className="flex items-start gap-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0 mt-0.5">
-                    <Clock className="w-4 h-4" />
+                {/* Availability */}
+                <div className="flex items-start gap-3.5 pb-3 border-b border-white/5">
+                  <div className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5">
+                    <Briefcase className="w-4 h-4" />
                   </div>
                   <div>
-                    <div className="text-[11px] uppercase tracking-wider text-slate-500 font-semibold">Response Time</div>
-                    <div className="text-sm font-medium text-slate-200">
-                      {personal.responseTime}
+                    <div className="text-[11px] uppercase tracking-wider text-slate-500 font-semibold">Availability</div>
+                    <div className="text-sm font-semibold text-emerald-400">
+                      Open to entry-level roles
                     </div>
                   </div>
                 </div>
+
+                {/* LinkedIn Link Row */}
+                <div className="flex items-center justify-between gap-3.5 pb-3 border-b border-white/5 group/link">
+                  <div className="flex items-start gap-3.5">
+                    <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0 mt-0.5 group-hover/link:border-amber-400 transition-colors">
+                      <Linkedin className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="text-[11px] uppercase tracking-wider text-slate-500 font-semibold">LinkedIn</div>
+                      <a
+                        href={personal.socialLinks.linkedin}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-sm font-medium text-slate-200 hover:text-amber-400 transition-colors flex items-center gap-1.5"
+                      >
+                        <span>linkedin.com/in/rohit-kumar-665082299</span>
+                        <ExternalLink className="w-3.5 h-3.5 text-slate-500 group-hover/link:text-amber-400 transition-colors" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* GitHub Link Row */}
+                <div className="flex items-center justify-between gap-3.5 group/link">
+                  <div className="flex items-start gap-3.5">
+                    <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0 mt-0.5 group-hover/link:border-amber-400 transition-colors">
+                      <Github className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="text-[11px] uppercase tracking-wider text-slate-500 font-semibold">GitHub</div>
+                      <a
+                        href={personal.socialLinks.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-sm font-medium text-slate-200 hover:text-amber-400 transition-colors flex items-center gap-1.5"
+                      >
+                        <span>github.com/r0kumar</span>
+                        <ExternalLink className="w-3.5 h-3.5 text-slate-500 group-hover/link:text-amber-400 transition-colors" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
               </div>
 
             </div>
+
+            {/* Download Resume Button below the card */}
+            <div className="pt-2">
+              <button
+                onClick={handleDownloadResume}
+                className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider text-slate-200 bg-[#121A29] hover:bg-[#162238] border border-white/10 hover:border-amber-500/40 transition-all duration-300 hover:shadow-[0_0_20px_-5px_rgba(245,158,11,0.3)] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+              >
+                <span>DOWNLOAD RESUME ({activeRole === 'fullstack' ? 'MERN' : 'DATA ANALYST'})</span>
+                <Download className="w-4 h-4 text-amber-400" />
+              </button>
+            </div>
+
           </div>
 
         </div>
@@ -262,4 +358,3 @@ export const Contact = () => {
     </section>
   );
 };
-

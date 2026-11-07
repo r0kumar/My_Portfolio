@@ -19,8 +19,7 @@ export const portfolioData = {
     email: "itrohitkumar62@gmail.com",
     phone: "+91 9958653317",
     location: "Noida, India",
-    availability: "Open to Entry-Level Roles (Graduating 2027)",
-    responseTime: "Within 24 hours",
+    availability: "Open to entry-level roles",
     profileImage: "/profile.jpg",
     resumeUrl: "#",
     socialLinks: {

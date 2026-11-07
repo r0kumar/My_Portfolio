@@ -11,6 +11,8 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 
 function App() {
+  const [activeRole, setActiveRole] = React.useState('fullstack');
+
   return (
     <div className="min-h-screen bg-[#080C15] text-slate-200 selection:bg-amber-500 selection:text-black relative overflow-x-hidden">
       {/* Background ambient lighting */}
@@ -24,13 +26,13 @@ function App() {
         <Navbar />
         <main>
           <Hero />
-          <About />
+          <About activeRole={activeRole} setActiveRole={setActiveRole} />
           <Services />
           <Skills />
           <Projects />
           <Experience />
           <WhyHireMe />
-          <Contact />
+          <Contact activeRole={activeRole} />
         </main>
         <Footer />
       </div>

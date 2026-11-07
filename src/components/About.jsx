@@ -2,13 +2,18 @@ import React, { useState } from 'react';
 import { Download, Mail, MapPin, CheckCircle2, Award, Briefcase, GraduationCap } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
-export const About = () => {
+export const About = ({ activeRole = 'fullstack', setActiveRole }) => {
   const { about, personal, summaries } = portfolioData;
-  const [activeRole, setActiveRole] = useState('fullstack');
+  const [localRole, setLocalRole] = useState('fullstack');
+  const currentRole = setActiveRole ? activeRole : localRole;
+  const handleRoleChange = (role) => {
+    if (setActiveRole) setActiveRole(role);
+    setLocalRole(role);
+  };
 
   const handleDownloadResume = async (e) => {
     e.preventDefault();
-    const fileName = activeRole === 'fullstack'
+    const fileName = currentRole === 'fullstack'
       ? 'Rohit_Kumar_MERN_Resume.pdf'
       : 'Rohit_Kumar_Data_Analyst_Resume.pdf';
     const filePath = `/resumes/${fileName}`;
@@ -57,9 +62,9 @@ export const About = () => {
             {/* Role Toggle Switcher */}
             <div className="inline-flex p-1 rounded-xl bg-[#121A29] border border-white/10 gap-1">
               <button
-                onClick={() => setActiveRole('fullstack')}
+                onClick={() => handleRoleChange('fullstack')}
                 className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
-                  activeRole === 'fullstack'
+                  currentRole === 'fullstack'
                     ? 'bg-gradient-to-r from-amber-400 to-orange-500 text-black shadow-md shadow-orange-500/20'
                     : 'text-slate-400 hover:text-white'
                 }`}
@@ -67,9 +72,9 @@ export const About = () => {
                 Full Stack (MERN) View
               </button>
               <button
-                onClick={() => setActiveRole('dataAnalyst')}
+                onClick={() => handleRoleChange('dataAnalyst')}
                 className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
-                  activeRole === 'dataAnalyst'
+                  currentRole === 'dataAnalyst'
                     ? 'bg-gradient-to-r from-amber-400 to-orange-500 text-black shadow-md shadow-orange-500/20'
                     : 'text-slate-400 hover:text-white'
                 }`}
@@ -80,7 +85,7 @@ export const About = () => {
 
             {/* Dynamic Summary based on active role */}
             <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
-              {activeRole === 'fullstack' ? summaries.fullstack : summaries.dataAnalyst}
+              {currentRole === 'fullstack' ? summaries.fullstack : summaries.dataAnalyst}
             </p>
 
             {/* Stat Counters Grid (2x2 on sm, 4-col on lg) */}
@@ -106,7 +111,7 @@ export const About = () => {
                 onClick={handleDownloadResume}
                 className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-slate-200 bg-[#121A29] hover:bg-[#162238] border border-white/10 hover:border-amber-500/40 transition-all duration-300 hover:shadow-[0_0_20px_-5px_rgba(245,158,11,0.3)] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
               >
-                <span>DOWNLOAD RESUME ({activeRole === 'fullstack' ? 'MERN' : 'DATA ANALYST'})</span>
+                <span>DOWNLOAD RESUME ({currentRole === 'fullstack' ? 'MERN' : 'DATA ANALYST'})</span>
                 <Download className="w-4 h-4 text-amber-400" />
               </button>
             </div>
