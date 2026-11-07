@@ -8,7 +8,7 @@ export const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    projectType: 'Web Development',
+    projectType: 'Frontend Development',
     budget: '$5,000 - $10,000',
     message: ''
   });
@@ -36,7 +36,7 @@ export const Contact = () => {
       setFormData({
         name: '',
         email: '',
-        projectType: 'Web Development',
+        projectType: 'Frontend Development',
         budget: '$5,000 - $10,000',
         message: ''
       });
@@ -105,11 +105,9 @@ export const Contact = () => {
                     onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                     className="w-full px-5 py-3.5 rounded-xl bg-[#121A29]/90 border border-white/10 text-slate-200 text-sm focus:outline-none focus:border-amber-500/60 focus:ring-1 focus:ring-amber-500/40 transition-all cursor-pointer"
                   >
-                    <option value="Web Development" className="bg-[#121A29]">Project: Web Development</option>
-                    <option value="Frontend Development" className="bg-[#121A29]">Project: Frontend UI/UX</option>
-                    <option value="Backend / API Development" className="bg-[#121A29]">Project: Backend & APIs</option>
-                    <option value="Full Stack Application" className="bg-[#121A29]">Project: Full-Stack App</option>
-                    <option value="Consulting" className="bg-[#121A29]">Project: Technical Consultation</option>
+                    <option value="Frontend Development" className="bg-[#121A29]">Project: Frontend Development</option>
+                    <option value="Full Stack Development" className="bg-[#121A29]">Project: Full Stack Development</option>
+                    <option value="Data Analytics" className="bg-[#121A29]">Project: Data Analytics</option>
                   </select>
                 </div>
                 <div>
