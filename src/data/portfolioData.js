@@ -313,7 +313,7 @@ export const portfolioData = {
     { name: "SERVICES", href: "#services" },
     { name: "SKILLS", href: "#skills" },
     { name: "PROJECTS", href: "#projects" },
-    { name: "EDUCATION", href: "#education" },
+    { name: "WHY HIRE ME", href: "#why-hire-me" },
     { name: "CONTACT", href: "#contact" }
   ]
 };
