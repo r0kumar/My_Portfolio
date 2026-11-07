@@ -284,30 +284,27 @@ export const portfolioData = {
       ]
     }
   ],
-  testimonials: [
+  whyHireMe: [
     {
       id: 1,
-      quote: "Rohit demonstrated tremendous dedication and attention to detail during our engineering sprints. His code is clean, robust, and delivered right on schedule.",
-      name: "Engineering Mentor",
-      role: "Lead Architect, AirDawgs Labs",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
-      rating: 5
+      title: "Full-Stack Builder",
+      tag: "MERN & REST APIs",
+      icon: "Code2",
+      description: "Built and deployed 2 MERN apps (FixMate, Resume Analyzer) with JWT authentication, role-based access control and REST APIs tested with Postman; deployed on Netlify and Render."
     },
     {
       id: 2,
-      quote: "A talented full-stack engineer and analytical problem solver. Rohit's ability to combine MERN technologies with data analysis makes him a standout team player.",
-      name: "Hackathon Teammate",
-      role: "Collaborator, Smart India Hackathon",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
-      rating: 5
+      title: "Data-Driven Thinker",
+      tag: "Power BI & SQL",
+      icon: "BarChart3",
+      description: "Built a Power BI dashboard analyzing 22,000+ orders and performed SQL analysis using JOINs, GROUP BY, subqueries and aggregate functions."
     },
     {
       id: 3,
-      quote: "Strong foundational knowledge in DBMS, JavaScript, and REST APIs. Rohit quickly grasps complex system requirements and translates them into clean code.",
-      name: "Academic Reviewer",
-      role: "Department of IT, JSSATE Noida",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
-      rating: 5
+      title: "AI-Ready & Quality-Focused",
+      tag: "LLM QA & GenAI",
+      icon: "Sparkles",
+      description: "AI Systems Evaluation Intern at AirDawgs Labs; evaluated LLM outputs, designed test prompts, integrated Google GenAI, and documented findings in structured reports."
     }
   ],
   navLinks: [

@@ -16,7 +16,7 @@ export const Navbar = () => {
       }
 
       // Track active section
-      const sections = ['home', 'about', 'services', 'skills', 'projects', 'experience', 'testimonials', 'contact'];
+      const sections = ['home', 'about', 'services', 'skills', 'projects', 'experience', 'why-hire-me', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
