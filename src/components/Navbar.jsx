@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import { ResumeDropdown } from './ResumeDropdown';
 
-export const Navbar = () => {
+export const Navbar = ({ activeRole = 'fullstack' }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -114,8 +115,14 @@ export const Navbar = () => {
             })}
           </nav>
 
-          {/* Right Action Button */}
-          <div className="hidden md:flex items-center">
+          {/* Right Action Buttons */}
+          <div className="hidden md:flex items-center gap-2.5">
+            <ResumeDropdown
+              activeRole={activeRole}
+              variant="navbar"
+              buttonText="Resume"
+              align="right"
+            />
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
@@ -163,11 +170,18 @@ export const Navbar = () => {
               );
             })}
           </div>
-          <div className="pt-3 border-t border-white/10">
+          <div className="pt-3 border-t border-white/10 space-y-2.5">
+            <ResumeDropdown
+              activeRole={activeRole}
+              variant="default"
+              buttonText="Download Resume"
+              align="left"
+              className="w-full"
+            />
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
-              className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-black bg-gradient-to-r from-amber-400 to-orange-500 shadow-lg shadow-orange-500/20"
+              className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs font-bold uppercase tracking-wider text-black bg-gradient-to-r from-amber-400 to-orange-500 shadow-lg shadow-orange-500/20"
             >
               <span>LET'S TALK</span>
               <ArrowUpRight className="w-4 h-4 text-black" />

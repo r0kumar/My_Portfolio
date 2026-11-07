@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, Briefcase, Github, Linkedin, Phone, Mail } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { TechIcon } from './TechIcons';
+import { ResumeDropdown } from './ResumeDropdown';
 
-export const Hero = () => {
+export const Hero = ({ activeRole = 'fullstack' }) => {
   const { personal } = portfolioData;
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
@@ -81,10 +82,10 @@ export const Hero = () => {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-wrap items-center gap-3.5 pt-2">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm font-bold uppercase tracking-wider text-black bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-300 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-0.5 active:translate-y-0"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm font-bold uppercase tracking-wider text-black bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-300 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
               >
                 <span>HIRE ME</span>
                 <ArrowRight className="w-4 h-4 text-black transition-transform duration-200 group-hover:translate-x-1" />
@@ -92,11 +93,18 @@ export const Hero = () => {
 
               <a
                 href="#projects"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold tracking-wide text-slate-200 bg-[#121A29]/90 hover:bg-[#162238] border border-white/10 hover:border-amber-500/40 transition-all duration-300 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold tracking-wide text-slate-200 bg-[#121A29]/90 hover:bg-[#162238] border border-white/10 hover:border-amber-500/40 transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
               >
                 <Briefcase className="w-4 h-4 text-amber-400" />
                 <span>VIEW MY WORK</span>
               </a>
+
+              <ResumeDropdown
+                activeRole={activeRole}
+                variant="hero"
+                buttonText="Download Resume"
+                align="left"
+              />
             </div>
 
             {/* Availability Status Badge */}

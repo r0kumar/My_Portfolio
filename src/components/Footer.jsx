@@ -1,8 +1,9 @@
 import React from 'react';
 import { ArrowUp, Github, Linkedin, Mail, Phone } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import { ResumeDropdown } from './ResumeDropdown';
 
-export const Footer = () => {
+export const Footer = ({ activeRole = 'fullstack' }) => {
   const { brand, personal } = portfolioData;
 
   const scrollToTop = () => {
@@ -66,6 +67,15 @@ export const Footer = () => {
                   </a>
                 </li>
               ))}
+              <li className="pt-1">
+                <ResumeDropdown
+                  activeRole={activeRole}
+                  variant="footer"
+                  buttonText="Download Resume"
+                  align="left"
+                  dropDirection="up"
+                />
+              </li>
             </ul>
           </div>
 
@@ -137,7 +147,15 @@ export const Footer = () => {
             © 2026 {personal.firstName} {personal.lastName}. All rights reserved.
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3.5">
+            <ResumeDropdown
+              activeRole={activeRole}
+              variant="footer"
+              buttonText="Resume"
+              align="right"
+              dropDirection="up"
+            />
+            <span className="hidden sm:inline text-slate-700">•</span>
             <span>Built with passion <span className="text-orange-400">🧡</span> and lots of coffee <span className="text-amber-400">☕</span></span>
             
             <button

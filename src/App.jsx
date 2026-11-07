@@ -23,9 +23,9 @@ function App() {
       </div>
 
       <div className="relative z-10">
-        <Navbar />
+        <Navbar activeRole={activeRole} />
         <main>
-          <Hero />
+          <Hero activeRole={activeRole} />
           <About activeRole={activeRole} setActiveRole={setActiveRole} />
           <Services />
           <Skills />
@@ -34,7 +34,7 @@ function App() {
           <WhyHireMe />
           <Contact activeRole={activeRole} />
         </main>
-        <Footer />
+        <Footer activeRole={activeRole} />
       </div>
     </div>
   );

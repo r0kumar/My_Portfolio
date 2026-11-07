@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Download, Mail, MapPin, CheckCircle2, Award, Briefcase, GraduationCap } from 'lucide-react';
+import { Mail, MapPin, CheckCircle2, Award, Briefcase, GraduationCap } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import { ResumeDropdown } from './ResumeDropdown';
 
 export const About = ({ activeRole = 'fullstack', setActiveRole }) => {
   const { about, personal, summaries } = portfolioData;
@@ -9,31 +10,6 @@ export const About = ({ activeRole = 'fullstack', setActiveRole }) => {
   const handleRoleChange = (role) => {
     if (setActiveRole) setActiveRole(role);
     setLocalRole(role);
-  };
-
-  const handleDownloadResume = async (e) => {
-    e.preventDefault();
-    const fileName = currentRole === 'fullstack'
-      ? 'Rohit_Kumar_MERN_Resume.pdf'
-      : 'Rohit_Kumar_Data_Analyst_Resume.pdf';
-    const filePath = `/resumes/${fileName}`;
-
-    try {
-      const response = await fetch(filePath, { method: 'HEAD' });
-      if (response.ok) {
-        const link = document.createElement('a');
-        link.href = filePath;
-        link.download = fileName;
-        link.target = '_blank';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      } else {
-        alert(`Resume file "${fileName}" not found in /public/resumes/. Place your PDF in the "public/resumes/" folder to enable one-click downloading!`);
-      }
-    } catch {
-      alert(`Place your PDF ("${fileName}") in the "public/resumes/" folder to enable one-click downloading!`);
-    }
   };
 
   return (
@@ -105,15 +81,14 @@ export const About = ({ activeRole = 'fullstack', setActiveRole }) => {
               ))}
             </div>
 
-            {/* Download Resume Button */}
+            {/* Download Resume Button with Dropdown */}
             <div className="pt-2">
-              <button
-                onClick={handleDownloadResume}
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-slate-200 bg-[#121A29] hover:bg-[#162238] border border-white/10 hover:border-amber-500/40 transition-all duration-300 hover:shadow-[0_0_20px_-5px_rgba(245,158,11,0.3)] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
-              >
-                <span>DOWNLOAD RESUME ({currentRole === 'fullstack' ? 'MERN' : 'DATA ANALYST'})</span>
-                <Download className="w-4 h-4 text-amber-400" />
-              </button>
+              <ResumeDropdown
+                activeRole={currentRole}
+                variant="hero"
+                buttonText="Download Resume"
+                align="left"
+              />
             </div>
 
           </div>

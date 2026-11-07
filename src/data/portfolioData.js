@@ -21,12 +21,28 @@ export const portfolioData = {
     location: "Noida, India",
     availability: "Open to entry-level roles",
     profileImage: "/profile.jpg",
-    resumeUrl: "#",
+    resumeUrl: "/resumes/Rohit_Kumar_MERN_Resume.pdf",
     socialLinks: {
       github: "https://github.com/r0kumar",
       linkedin: "https://linkedin.com/in/rohit-kumar-665082299",
       email: "mailto:itrohitkumar62@gmail.com",
       phone: "tel:+919958653317"
+    }
+  },
+  resumes: {
+    mern: {
+      title: "Full Stack / MERN Developer Resume",
+      shortTitle: "Full Stack / MERN",
+      fileName: "Rohit_Kumar_MERN_Resume.pdf",
+      path: "/resumes/Rohit_Kumar_MERN_Resume.pdf",
+      roleKey: "fullstack"
+    },
+    dataAnalyst: {
+      title: "Data Analyst Resume",
+      shortTitle: "Data Analyst",
+      fileName: "Rohit_Kumar_Data_Analyst_Resume.pdf",
+      path: "/resumes/Rohit_Kumar_Data_Analyst_Resume.pdf",
+      roleKey: "dataAnalyst"
     }
   },
   summaries: {
