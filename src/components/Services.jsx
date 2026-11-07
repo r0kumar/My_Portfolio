@@ -22,12 +22,11 @@ export const Services = ({ activeRole = 'fullstack', onSelectFilter }) => {
   }));
 
   // Reorder based on role toggle:
-  // In Data Analyst View: Data Analytics & BI, Databases & SQL, AI Evaluation first
+  // In Data Analyst View: Data Analytics & BI, Databases & SQL first
   // In Developer View: Full-Stack, Frontend, Backend first
   const dataAnalystOrder = [
     'data-analytics',
     'databases-sql',
-    'ai-eval',
     'fullstack-dev',
     'frontend-dev',
     'backend-apis'
@@ -81,14 +80,24 @@ export const Services = ({ activeRole = 'fullstack', onSelectFilter }) => {
           </h2>
         </div>
 
-        {/* 6 Cards Grid: 3x2 on Desktop, 2 cols on Tablet, 1 col on Mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
-          {cards.map((card) => {
+        {/* 5 Cards Grid: 3 in Row 1, 2 centered in Row 2 on Desktop; 2-col on Tablet; 1-col on Mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 lg:gap-7">
+          {cards.map((card, idx) => {
             const { IconComponent } = card;
+            
+            // Symmetrical centering: on desktop (6 cols), cards 0,1,2 take 2 cols each (3 cards total 6 cols).
+            // Card 3 starts at col 2 and takes 2 cols; Card 4 takes 2 cols (centered underneath).
+            // On tablet (2 cols), card 4 is centered.
+            const colSpanClass = idx === 3
+              ? "lg:col-span-2 lg:col-start-2 md:col-span-1"
+              : idx === 4
+              ? "lg:col-span-2 md:col-span-2 md:max-w-md md:mx-auto w-full lg:max-w-none"
+              : "lg:col-span-2 md:col-span-1";
+
             return (
               <div
                 key={card.id}
-                className="group relative rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 border border-white/[0.08] hover:border-amber-500/40 shadow-xl shadow-black/40 hover:shadow-amber-500/10 overflow-hidden h-full"
+                className={`${colSpanClass} group relative rounded-2xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 border border-white/[0.08] hover:border-amber-500/40 shadow-xl shadow-black/40 hover:shadow-amber-500/10 overflow-hidden h-full`}
                 style={{
                   background: 'radial-gradient(130% 100% at 50% 0%, rgba(245, 158, 11, 0.10) 0%, rgba(18, 26, 42, 0.85) 45%, rgba(11, 16, 26, 0.95) 100%)',
                 }}

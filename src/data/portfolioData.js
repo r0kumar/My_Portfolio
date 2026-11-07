@@ -100,14 +100,6 @@ export const portfolioData = {
       icon: "Database",
       target: "#projects",
       filter: "Data Analytics"
-    },
-    {
-      id: "ai-eval",
-      title: "AI Evaluation & Prompt Engineering",
-      description: "Evaluating LLM outputs for quality, accuracy and consistency, designing test prompts, and integrating Google GenAI (AirDawgs Labs internship).",
-      icon: "Bot",
-      target: "#experience",
-      filter: null
     }
   ],
   skills: {
