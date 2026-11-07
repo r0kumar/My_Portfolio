@@ -2,7 +2,7 @@ export const portfolioData = {
   brand: {
     name: "ROHIT.DEV",
     shortName: "RK",
-    tagline: "Building scalable digital solutions & data-driven insights that make an impact."
+    tagline: "Final-year B.Tech IT student building full-stack apps and data dashboards."
   },
   personal: {
     greeting: "― HELLO, I'M",

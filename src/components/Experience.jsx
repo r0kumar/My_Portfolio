@@ -118,7 +118,7 @@ export const Experience = () => {
           <div className="lg:col-span-5 space-y-10">
             
             {/* Certifications Card List */}
-            <div className="space-y-6">
+            <div id="certifications" className="space-y-6">
               <div className="flex items-center gap-2.5 pb-2 border-b border-white/5">
                 <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
                   <Award className="w-4 h-4" />
