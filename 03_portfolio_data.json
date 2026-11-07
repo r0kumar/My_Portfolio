@@ -1,0 +1,105 @@
+{
+  "name": "Rohit Kumar",
+  "location": "Noida, India",
+  "phone": "+91 9958653317",
+  "email": "itrohitkumar62@gmail.com",
+  "linkedin": "https://linkedin.com/in/rohit-kumar-665082299",
+  "github": "https://github.com/r0kumar",
+  "summaries": {
+    "fullstack": "B.Tech Information Technology student (graduating 2027) with a strong foundation in JavaScript, OOP, SQL and DBMS and hands-on experience building and deploying full-stack applications with React.js, Node.js, Express.js and MongoDB. Skilled in designing RESTful APIs, JWT authentication and database-driven features, with a problem-solving mindset sharpened in hackathons. Seeking an entry-level MERN Stack / Full Stack Developer role.",
+    "data_analyst": "Aspiring Data Analyst with hands-on experience in SQL, Python, Excel, and Power BI. Skilled in building interactive dashboards, performing exploratory data analysis, and translating large datasets into actionable business insights. Experienced in structured evaluation and technical documentation, with strong analytical thinking and problem-solving ability. Seeking to apply data visualization, reporting, and business intelligence skills in a Data Analyst role."
+  },
+  "skills": {
+    "Languages": ["JavaScript", "Python", "SQL"],
+    "Frontend": ["React.js", "Context API", "HTML5", "CSS3", "Responsive Design"],
+    "Backend & APIs": ["Node.js", "Express.js", "RESTful APIs", "JWT Authentication", "Role-Based Access Control"],
+    "Databases": ["MongoDB", "MySQL", "PostgreSQL"],
+    "Data Analysis & Visualization": ["Power BI", "Microsoft Excel", "Pandas", "NumPy", "Matplotlib", "Exploratory Data Analysis (EDA)"],
+    "Data Core Competencies": ["Data Cleaning", "Dashboard Development", "KPI Tracking", "Trend Analysis", "Business Intelligence Reporting"],
+    "Tools & Platforms": ["Git", "GitHub", "Postman", "Netlify", "Render"],
+    "Core CS": ["Object-Oriented Programming (OOP)", "DBMS", "Problem Solving"],
+    "AI & Dev Tools": ["Cursor", "Google AI Studio", "AI-Assisted Coding", "LLM API Integration", "Prompt Engineering"],
+    "Soft Skills": ["Communication", "Teamwork", "Problem Solving", "Adaptability", "Time Management", "Collaboration"]
+  },
+  "experience": [
+    {
+      "role": "AI Systems Evaluation Intern",
+      "company": "AirDawgs Labs",
+      "mode": "Online",
+      "period": "Jul 2026 – Aug 2026",
+      "points": [
+        "Evaluated large language model (LLM) outputs against structured criteria for quality, factual accuracy, consistency and reliability across diverse test scenarios, strengthening data-driven QA workflows.",
+        "Designed and refined test prompts using systematic evaluation methods to identify model strengths, weaknesses and failure patterns, generating insights used for model optimisation.",
+        "Documented evaluation findings in structured reports to support quality assurance and research initiatives, applying analytical rigour and clear technical communication."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "FixMate – PG & Hostel Maintenance Tracker",
+      "category": "Full Stack",
+      "stack": ["MERN Stack", "JWT"],
+      "period": "Oct 2026 – Nov 2026",
+      "github": "PLACEHOLDER",
+      "live": "PLACEHOLDER",
+      "points": [
+        "Developed a responsive MERN application with separate dashboards for Residents, Staff and Admin to manage maintenance activities and complaints.",
+        "Built RESTful APIs using Node.js and Express.js with MongoDB to manage complaints, room details and staff assignments.",
+        "Implemented JWT authentication and role-based access control to secure user accounts and restrict unauthorized access.",
+        "Created reusable React components and used Context API for session management and API integration."
+      ]
+    },
+    {
+      "title": "Resume Analyzer & Report Generator",
+      "category": "Full Stack + AI",
+      "stack": ["MERN Stack", "Google GenAI", "JWT", "bcrypt", "Multer", "pdf-parse", "Puppeteer", "Postman", "Netlify", "Render"],
+      "period": "Mar 2026 – Apr 2026",
+      "github": "PLACEHOLDER",
+      "live": "PLACEHOLDER",
+      "points": [
+        "Built a full-stack MERN application that evaluates resumes against job descriptions using Google GenAI to produce match scores, skill-gap analysis, interview Q&A and a personalised 7-day improvement roadmap.",
+        "Designed and developed REST APIs for authentication, resume upload, analysis and report generation; tested every endpoint with Postman.",
+        "Implemented secure JWT and bcrypt authentication and PDF resume parsing using Multer and pdf-parse.",
+        "Generated structured, downloadable PDF reports with Puppeteer; deployed the frontend on Netlify and the backend on Render."
+      ]
+    },
+    {
+      "title": "Sales Performance Dashboard",
+      "category": "Data Analytics",
+      "stack": ["Power BI"],
+      "period": "Jan 2026 – Feb 2026",
+      "github": "PLACEHOLDER",
+      "points": [
+        "Built an interactive Power BI dashboard analyzing 22,000+ orders to monitor KPIs, regional performance, and sales trends across multiple business dimensions.",
+        "Applied time-series analysis and dynamic visualizations to surface seasonal trends, supporting data-driven strategic decision making."
+      ]
+    },
+    {
+      "title": "Music Store Database Analysis",
+      "category": "Data Analytics",
+      "stack": ["SQL"],
+      "period": "Nov 2025 – Dec 2025",
+      "github": "PLACEHOLDER",
+      "points": [
+        "Analyzed a relational music store database using SQL to evaluate sales performance, customer engagement, genre popularity, and artist revenue.",
+        "Wrote complex queries using JOINs, GROUP BY, subqueries, and aggregate functions to extract structured, actionable insights from relational data.",
+        "Identified customer purchasing patterns and top-performing tracks, translating raw records into business-relevant findings."
+      ]
+    }
+  ],
+  "education": [
+    {"institution": "JSS Academy of Technical Education, Noida, India", "degree": "Bachelor of Technology – Information Technology", "period": "2023 – 2027", "score": "CGPA: 7.36/10"},
+    {"institution": "Central Hindu Boys School, Varanasi", "degree": "Intermediate (Class XII), PCM", "period": "2021 – 2023"},
+    {"institution": "Florence Public School, New Delhi", "degree": "High School (Class X)", "period": "2019 – 2021"}
+  ],
+  "certifications": [
+    {"title": "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate", "issuer": "Oracle", "date": "Sep 2025", "link": "PLACEHOLDER"},
+    {"title": "Python for Everybody", "issuer": "University of Michigan (Coursera)", "date": "Dec 2024", "link": "PLACEHOLDER"},
+    {"title": "Introduction to Front End Development", "issuer": "Simplilearn", "date": "2024", "link": "PLACEHOLDER"},
+    {"title": "Data Analyst 101", "issuer": "Simplilearn", "date": "Sep 2026", "link": "PLACEHOLDER"}
+  ],
+  "achievements": [
+    "Advanced to / selected for Round 2 of Smart India Hackathon 2025 for innovative problem-solving under competitive conditions.",
+    "Secured 1st rank in school in the Class X board examinations."
+  ]
+}
