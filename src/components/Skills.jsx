@@ -94,19 +94,10 @@ export const Skills = () => {
         {/* Middle Section: Dedicated AI Tools & Technologies Category */}
         {skills.aiTools && (
           <div className="pt-10 border-t border-white/5 space-y-8">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-              <div className="space-y-2">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs font-semibold text-amber-400">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                  <span>AI WORKFLOW & DEVELOPMENT</span>
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                  AI Tools & Technologies
-                </h3>
-              </div>
-              <p className="text-xs sm:text-sm text-slate-400 max-w-md">
-                Leveraging frontier LLMs, agentic environments, and prompt engineering to build high-reliability software.
-              </p>
+            <div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                AI Tools & Technologies
+              </h3>
             </div>
 
             {/* 4 AI Categories Grid */}
