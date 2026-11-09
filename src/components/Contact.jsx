@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Briefcase, ArrowRight, CheckCircle2, Copy, Check, ExternalLink, Github, Linkedin, AlertCircle } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
-import { ResumeDropdown } from './ResumeDropdown';
 
-export const Contact = ({ activeRole = 'fullstack' }) => {
+export const Contact = () => {
   const { personal } = portfolioData;
   const [copiedField, setCopiedField] = useState(null);
   const [formData, setFormData] = useState({
@@ -177,8 +176,8 @@ export const Contact = ({ activeRole = 'fullstack' }) => {
             </form>
           </div>
 
-          {/* Right Column: Contact Info Card & Download Resume */}
-          <div className="lg:col-span-5 space-y-4">
+          {/* Right Column: Contact Info Card */}
+          <div className="lg:col-span-5">
             <div className="rounded-2xl bg-[#121A29]/90 border border-white/[0.08] p-6 sm:p-7 shadow-xl shadow-black/40 space-y-5">
               
               {/* Header */}
@@ -313,17 +312,6 @@ export const Contact = ({ activeRole = 'fullstack' }) => {
 
               </div>
 
-            </div>
-
-            {/* Download Resume Button below the card */}
-            <div className="pt-2 w-full">
-              <ResumeDropdown
-                activeRole={activeRole}
-                variant="card"
-                buttonText="Download Resume"
-                align="center"
-                className="w-full"
-              />
             </div>
 
           </div>

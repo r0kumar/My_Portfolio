@@ -33,7 +33,7 @@ function App() {
           <Projects activeFilter={activeProjectFilter} setActiveFilter={setActiveProjectFilter} />
           <Experience />
           <WhyHireMe />
-          <Contact activeRole={activeRole} />
+          <Contact />
         </main>
         <Footer activeRole={activeRole} />
       </div>
